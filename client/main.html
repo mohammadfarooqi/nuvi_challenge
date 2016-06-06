@@ -1,0 +1,125 @@
+<head>
+  <title>nuvi_challenge</title>
+</head>
+
+<body>
+  <!-- nav bar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">NUVI Challenge</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+<!--             <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li> -->
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+    {{> data}}
+  </div><!-- /.container -->
+</body>
+
+<template name="data">
+  <div class="main-div">
+    <!-- filter by dropdown -->
+    <div class="dropdown dropdown_padding_bottom div-inline">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter By
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#" class="filter_choice">none</a></li>
+        {{#each nivi_data_get_filters}}
+          <li><a href="#" class="filter_choice">{{this}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <!-- sort by dropdown -->
+    <div class="dropdown dropdown_padding_bottom div-inline">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#" class="sort_by_choice">none</a></li>
+        <li><a href="#" class="sort_by_choice">likes</a></li>
+        <li><a href="#" class="sort_by_choice">comments</a></li>
+        <li><a href="#" class="sort_by_choice">shares</a></li>
+        <li><a href="#" class="sort_by_choice">date</a></li>
+      </ul>
+    </div>
+    
+    <!-- analytics button -->
+    <button type="button" class="btn btn-primary" data-modal="analytics_ex" id="analytics_button">Analytics Example</button>
+    
+    <!-- results -->
+    <div class="row">
+      {{#each nuvi_data}}
+        <div class="col-xs-12 col-md-4">
+          <div class="thumbnail">
+            <img src="{{actor_avator}}" alt="actor_avatar" width="200" />
+
+            <div class="caption">
+              <p>
+                <b>Provider:</b> {{provider}}<br/>
+                <b>Username:</b> {{actor_username}}<br/>
+                <b>Content:</b> {{activity_message}}<br/>
+                <b>Attachments:</b> {{activity_attachment}}<br/>
+                <b>Date Posted:</b> {{activity_date}}<br/>
+                <b>Number of Likes:</b> {{activity_likes}}<br/>
+                <b>Number of Comments:</b> {{activity_comments}}<br/>
+                <b>Number of Shares:</b> {{activity_shares}}
+              </p>
+              <p><a href="#" class="like_button">Like</a> <a href="#" class="comment_button" data-modal="comments">Comment</a> <a href="#" class="share_button">Share</a></p>
+            </div>
+          </div>  <!-- /col -->
+        </div>
+      {{/each}}
+    </div> <!-- /row -->
+  </div> <!-- /main-div -->
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com">Discussions</a></li>
+  </ul>
+</template>

@@ -1,0 +1,21 @@
+/* CSS declarations go here */
+body {
+  padding-top: 50px;
+}
+
+.main-div {
+	padding: 40px 15px;
+}
+
+.thumbnail {
+	min-height: 480px;
+	max-height: 480px;
+}
+
+.dropdown_padding_bottom {
+	padding-bottom: 15px;
+}
+
+.div-inline{
+    display:inline-block;
+}
